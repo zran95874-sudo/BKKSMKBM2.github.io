@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BKK SMK Budi Murni 2 - Portal Karier & Tracer Study Alumni</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js untuk Visualisasi Statistik -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#050d1f',
+                            900: '#0a1938',
+                            800: '#102857',
+                            700: '#1a3b7c',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- ===================================================================== -->
+    <!-- LAYAR PORTAL LOGIN & REGISTRASI MANDIRI ALUMNI                        -->
+    <!-- ===================================================================== -->
+    <div id="authScreen" class="min-h-screen bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 flex items-center justify-center p-4 sm:p-6 relative overflow-hidden">
+        <!-- Dekorasi Cahaya Latar -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-cyan-500/15 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-gold-500/15 blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 w-full max-w-lg bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden text-white">
+            <!-- Header Kartu Login dengan Dual Logo Berdampingan -->
+            <div class="px-6 pt-7 pb-5 text-center border-b border-white/10 bg-navy-950/40">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <!-- 1. Logo SMK Budi Murni 2 -->
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl p-1.5 shadow-lg border-2 border-gold-400/80 flex items-center justify-center overflow-hidden">
+                        <img src="logo bm kecil.png" alt="Logo SMK Budi Murni 2" class="w-full h-full object-contain"
+                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                        <svg viewBox="0 0 140 150" class="w-full h-full hidden" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26 7 H114 C114 21 123 28 133 28 V86 C133 118 103 137 70 146 C37 137 7 118 7 86 V28 C17 28 26 21 26 7 Z" fill="#ffffff" stroke="#18181b" stroke-width="5"/>
+                            <path d="M64 27 L60 13 Q70 5 73 16 Q78 13 77 27 Z" fill="#dc2626" stroke="#18181b" stroke-width="2.2"/>
+                            <polygon points="56,39 84,39 78,27 62,27" fill="#eab308" stroke="#18181b" stroke-width="2.2"/>
+                            <path d="M46 39 H94 L102 52 H38 Z" fill="#0ea5e9" stroke="#18181b" stroke-width="2.5"/>
+                            <text x="70" y="49.5" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="11.5" fill="#ffffff">SMK</text>
+                            <path d="M41 52 H99 C99 65 107 75 107 88 C107 105 89 116 70 122 C51 116 33 105 33 88 C33 75 41 65 41 52 Z" fill="#0284c7" stroke="#18181b" stroke-width="2.5"/>
+                            <path d="M50 63 Q60 58 70 64 Q80 58 90 63 V93 Q80 88 70 94 Q60 88 50 93 Z" fill="#ffffff" stroke="#18181b" stroke-width="2.2"/>
+                            <line x1="70" y1="64" x2="70" y2="94" stroke="#18181b" stroke-width="2"/>
+                            <text x="70" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="7.8" fill="#ffffff">BUDI MURNI 2</text>
+                        </svg>
+                    </div>
+
+                    <div class="h-12 w-px bg-gradient-to-b from-transparent via-gold-400/70 to-transparent"></div>
+
+                    <!-- 2. Logo Kustom BKK Keren -->
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                        <svg viewBox="0 0 160 160" class="w-full h-full drop-shadow-[0_8px_16px_rgba(6,182,212,0.35)]" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="authShield" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#102857"/>
+                                    <stop offset="100%" stop-color="#050d1f"/>
+                                </linearGradient>
+                                <linearGradient id="authGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fde047"/>
+                                    <stop offset="50%" stop-color="#f59e0b"/>
+                                    <stop offset="100%" stop-color="#b45309"/>
+                                </linearGradient>
+                                <linearGradient id="authCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#06b6d4"/>
+                                    <stop offset="100%" stop-color="#67e8f9"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M80 10 L138 32 V76 C138 114 112 138 80 150 C48 138 22 114 22 76 V32 L80 10 Z" fill="url(#authShield)" stroke="url(#authGold)" stroke-width="6"/>
+                            <path d="M46 92 L70 68 L86 82 L114 52" fill="none" stroke="url(#authCyan)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M98 52 H114 V68" fill="none" stroke="url(#authCyan)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polygon points="80,28 114,43 80,58 46,43" fill="url(#authGold)"/>
+                            <rect x="44" y="114" width="72" height="18" rx="9" fill="url(#authGold)"/>
+                            <text x="80" y="126.5" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="10" fill="#050d1f" letter-spacing="1.2">BKK • BM2</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-gold-500/20 text-gold-400 border border-gold-500/30 mb-1.5">
+                    Portal Autentikasi NIK Alumni (2020 – 2050)
+                </span>
+                <h1 class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-white">BKK SMK BUDI MURNI 2</h1>
+                <p class="text-xs text-slate-300 mt-1">Masuk praktis cukup dengan memasukkan <strong class="text-cyan-300">16 digit NIK</strong> tanpa password</p>
+            </div>
+
+            <!-- Switcher Tab Login NIK / Daftar NIK Baru -->
+            <div class="grid grid-cols-2 p-1.5 bg-navy-950/60 mx-6 mt-5 rounded-2xl border border-white/10">
+                <button type="button" id="tabBtnLogin" onclick="switchAuthTab('login')"
+                    class="py-2.5 px-3 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md cursor-pointer">
+                    Masuk dengan NIK
+                </button>
+                <button type="button" id="tabBtnRegister" onclick="switchAuthTab('register')"
+                    class="py-2.5 px-3 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all cursor-pointer">
+                    Daftar NIK Baru
+                </button>
+            </div>
+
+            <!-- FORM 1: LOGIN ALUMNI HANYA DENGAN NIK (16 DIGIT) -->
+            <form id="loginForm" class="p-6 space-y-4">
+                <div>
+                    <div class="flex items-center justify-between mb-1.5">
+                        <label for="loginNik" class="block text-xs font-semibold text-slate-200">Nomor Induk Kependudukan (NIK - 16 Digit)</label>
+                        <span id="nikCounter" class="text-[11px] font-mono text-cyan-300">0 / 16 digit</span>
+                    </div>
+                    <div class="relative">
+                        <i data-lucide="credit-card" class="w-4 h-4 text-cyan-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                        <input type="text" id="loginNik" inputmode="numeric" maxlength="16" required
+                            oninput="sanitizeNikInput(this, 'nikCounter')"
+                            placeholder="Contoh: 1271011505020001"
+                            class="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-sm font-mono tracking-wider focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                    </div>
+                </div>
+
+                <!-- Pilihan NIK Demo Instan untuk Pengujian -->
+                <div class="p-3 rounded-xl bg-navy-950/50 border border-white/10 space-y-2">
+                    <p class="text-[11px] text-slate-300 font-medium flex items-center gap-1.5">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-gold-400"></i>
+                        <span>Uji Coba Cepat (Klik contoh NIK alumni terdaftar):</span>
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <button type="button" onclick="fillDemoNik('1271011505020001')"
+                            class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-cyan-500/20 border border-white/15 text-[11px] font-mono text-cyan-300 transition cursor-pointer">
+                            1271011505020001 (Andi)
+                        </button>
+                        <button type="button" onclick="fillDemoNik('1271022208030002')"
+                            class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-cyan-500/20 border border-white/15 text-[11px] font-mono text-cyan-300 transition cursor-pointer">
+                            1271022208030002 (Siti)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pt-1 space-y-2.5">
+                    <button type="submit"
+                        class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-navy-950 font-extrabold text-sm shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 transition cursor-pointer">
+                        <i data-lucide="log-in" class="w-4 h-4"></i>
+                        <span>Masuk dengan NIK</span>
+                    </button>
+
+                    <button type="button" onclick="loginAsDemo()"
+                        class="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-cyan-300 font-semibold text-xs flex items-center justify-center gap-2 transition cursor-pointer">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
+                        <span>Masuk Mode Operator / Admin BKK</span>
+                    </button>
+                </div>
+
+                <p class="text-[11px] text-center text-slate-400 pt-1">
+                    NIK Anda belum terdaftar? Klik tab <button type="button" onclick="switchAuthTab('register')" class="text-gold-400 font-semibold underline cursor-pointer">Daftar NIK Baru</button> di atas.
+                </p>
+            </form>
+
+            <!-- FORM 2: REGISTRASI NIK ALUMNI BARU (RINGKAS) -->
+            <form id="registerForm" class="hidden p-6 space-y-3.5 max-h-[75vh] overflow-y-auto">
+                <div>
+                    <div class="flex items-center justify-between mb-1">
+                        <label for="regNik" class="block text-xs font-semibold text-slate-200">NIK (16 Digit Angka) <span class="text-gold-400">*</span></label>
+                        <span id="regNikCounter" class="text-[11px] font-mono text-cyan-300">0 / 16 digit</span>
+                    </div>
+                    <input type="text" id="regNik" inputmode="numeric" maxlength="16" required
+                        oninput="sanitizeNikInput(this, 'regNikCounter')"
+                        placeholder="Masukkan 16 digit NIK sesuai KTP/KK"
+                        class="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs font-mono tracking-wider focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                </div>
+
+                <div>
+                    <label for="regNama" class="block text-xs font-semibold text-slate-200 mb-1">Nama Lengkap Alumni <span class="text-gold-400">*</span></label>
+                    <input type="text" id="regNama" required placeholder="Contoh: Rina Marlina"
+                        class="w-full px-3.5 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="regJurusan" class="block text-xs font-semibold text-slate-200 mb-1">Kompetensi Keahlian <span class="text-gold-400">*</span></label>
+                        <select id="regJurusan" required
+                            class="w-full px-3.5 py-2 rounded-xl bg-navy-900 border border-white/20 text-white text-xs focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                            <option value="">-- Pilih Jurusan --</option>
+                            <option value="Teknik Komputer dan Jaringan">Teknik Komputer dan Jaringan (TKJ)</option>
+                            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak / MM / DKV</option>
+                            <option value="Akuntansi dan Keuangan Lembaga">Akuntansi dan Keuangan Lembaga (AKL)</option>
+                            <option value="Otomatisasi dan Tata Kelola Perkantoran">Otomatisasi & Tata Kelola Perkantoran (OTKP)</option>
+                            <option value="Bisnis Daring dan Pemasaran">Bisnis Daring dan Pemasaran (BDP)</option>
+                            <option value="Teknik Kendaraan Ringan Otomotif">Teknik Kendaraan Ringan Otomotif (TKR)</option>
+                            <option value="Teknik dan Bisnis Sepeda Motor">Teknik dan Bisnis Sepeda Motor (TBSM)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="regTahun" class="block text-xs font-semibold text-slate-200 mb-1">Tahun Lulus (2020–2050) <span class="text-gold-400">*</span></label>
+                        <select id="regTahun" required
+                            class="w-full px-3.5 py-2 rounded-xl bg-navy-900 border border-white/20 text-white text-xs focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                            <option value="">-- Pilih Tahun --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="w-full py-3 px-4 mt-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-extrabold text-sm shadow-lg flex items-center justify-center gap-2 transition cursor-pointer">
+                    <i data-lucide="user-plus" class="w-4 h-4"></i>
+                    <span>Daftarkan NIK & Masuk Otomatis</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Container Utama Aplikasi (Tampil Setelah Login) -->
+    <div id="mainAppContainer" class="hidden min-h-screen flex-col lg:flex-row">
+
+        <!-- Mobile Top Header -->
+        <header class="lg:hidden bg-navy-950 text-white px-4 py-3 flex items-center justify-between sticky top-0 z-40 shadow-lg border-b border-navy-800">
+            <div class="flex items-center gap-2.5">
+                <!-- Logo SMK Budi Murni 2 (logo bm kecil.png + Fallback Vektor Identik) -->
+                <div class="w-10 h-10 flex-shrink-0 bg-white rounded-xl p-1 shadow-md border border-slate-200 flex items-center justify-center overflow-hidden">
+                    <img src="logo bm kecil.png" alt="Logo SMK Budi Murni 2" class="w-full h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <svg viewBox="0 0 120 130" class="w-full h-full hidden" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 6 H98 C98 18 106 24 114 24 V74 C114 102 88 118 60 126 C32 118 6 102 6 74 V24 C14 24 22 18 22 6 Z" fill="#ffffff" stroke="#1e293b" stroke-width="5"/>
+                        <path d="M55 24 L51 12 Q60 4 63 14 Q67 11 66 24 Z" fill="#dc2626" stroke="#1e293b" stroke-width="2"/>
+                        <polygon points="48,34 72,34 67,24 53,24" fill="#eab308" stroke="#1e293b" stroke-width="2"/>
+                        <path d="M40 34 H80 L86 45 H34 Z" fill="#0ea5e9" stroke="#1e293b" stroke-width="2.5"/>
+                        <text x="60" y="43" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="10" fill="#ffffff">SMK</text>
+                        <path d="M36 45 H84 C84 56 91 65 91 76 C91 91 76 100 60 105 C44 100 29 91 29 76 C29 65 36 56 36 45 Z" fill="#0284c7" stroke="#1e293b" stroke-width="2.5"/>
+                        <path d="M44 55 Q52 51 60 56 Q68 51 76 55 V81 Q68 77 60 82 Q52 77 44 81 Z" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="60" y1="56" x2="60" y2="82" stroke="#1e293b" stroke-width="2"/>
+                        <text x="60" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="6.8" fill="#ffffff">BUDI MURNI 2</text>
+                        <path d="M54 114 C30 112 16 90 16 40" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+                        <ellipse cx="14" cy="48" rx="4" ry="8" transform="rotate(-25 14 48)" fill="#facc15" stroke="#1e293b" stroke-width="1.5"/>
+                        <ellipse cx="14" cy="66" rx="4" ry="8" transform="rotate(-25 14 66)" fill="#facc15" stroke="#1e293b" stroke-width="1.5"/>
+                        <ellipse cx="16" cy="84" rx="4" ry="8" transform="rotate(-25 16 84)" fill="#facc15" stroke="#1e293b" stroke-width="1.5"/>
+                        <path d="M66 114 C90 112 104 90 104 40" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+                        <circle cx="105" cy="48" r="5.5" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+                        <path d="M100 49 A5.5 5.5 0 0 0 110 49 Z" fill="#16a34a"/>
+                        <circle cx="105" cy="68" r="5.5" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+                        <path d="M100 69 A5.5 5.5 0 0 0 110 69 Z" fill="#16a34a"/>
+                        <circle cx="101" cy="88" r="5.5" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+                        <path d="M96 89 A5.5 5.5 0 0 0 106 89 Z" fill="#16a34a"/>
+                        <rect x="51" y="106" width="18" height="10" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="h-7 w-px bg-white/20"></div>
+
+                <!-- Logo BKK Mini -->
+                <div class="w-10 h-10 flex-shrink-0">
+                    <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="shieldGradMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#0f295c"/>
+                                <stop offset="100%" stop-color="#050d1f"/>
+                            </linearGradient>
+                            <linearGradient id="goldGradMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fde047"/>
+                                <stop offset="50%" stop-color="#f59e0b"/>
+                                <stop offset="100%" stop-color="#b45309"/>
+                            </linearGradient>
+                            <linearGradient id="cyanGradMobile" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#06b6d4"/>
+                                <stop offset="100%" stop-color="#67e8f9"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M60 8 L104 24 V58 C104 86 84 104 60 114 C36 104 16 86 16 58 V24 L60 8 Z" fill="url(#shieldGradMobile)" stroke="url(#goldGradMobile)" stroke-width="5"/>
+                        <path d="M36 68 L54 50 L66 60 L86 38" fill="none" stroke="url(#cyanGradMobile)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M74 38 H86 V50" fill="none" stroke="url(#cyanGradMobile)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polygon points="60,22 86,33 60,44 34,33" fill="url(#goldGradMobile)"/>
+                    </svg>
+                </div>
+                <div class="pl-0.5">
+                    <h1 class="font-display font-bold text-xs sm:text-sm tracking-wide text-white leading-tight">BKK SMK BUDI MURNI 2</h1>
+                    <p class="text-[10px] text-cyan-400 font-medium">Bursa Kerja Khusus & Tracer Study</p>
+                </div>
+            </div>
+            <button id="mobileMenuBtn" class="p-2 rounded-xl bg-navy-800/80 text-slate-200 hover:text-white hover:bg-navy-700 transition">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </header>
+
+        <!-- Sidebar Navigasi -->
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950 text-white transform -translate-x-full lg:translate-x-0 lg:static lg:inset-auto transition-transform duration-300 ease-in-out flex flex-col justify-between border-r border-navy-800/80 shadow-2xl">
+            <div>
+                <!-- Brand & Dual Logo: Logo SMK Budi Murni 2 + Logo BKK Keren -->
+                <div class="p-6 border-b border-white/10">
+                    <div class="flex flex-col items-center text-center">
+                        <!-- Container Dual Logo Berdampingan -->
+                        <div class="flex items-center justify-center gap-3.5 mb-3.5">
+                            <!-- 1. Logo Resmi SMK Budi Murni 2 (logo bm kecil.png + Fallback Vektor Presisi Tinggi) -->
+                            <div class="relative w-20 h-20 group flex-shrink-0">
+                                <div class="absolute inset-0 bg-white/15 rounded-2xl blur-lg group-hover:bg-cyan-400/25 transition-all duration-500"></div>
+                                <div class="relative z-10 w-full h-full bg-white rounded-2xl p-1.5 shadow-[0_8px_18px_rgba(0,0,0,0.35)] border-2 border-gold-400/80 flex items-center justify-center overflow-hidden">
+                                    <img src="logo bm kecil.png" alt="Logo SMK Budi Murni 2" class="w-full h-full object-contain"
+                                         onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <!-- Fallback Ilustrasi Vektor Identik dengan logo bm kecil.png -->
+                                    <svg viewBox="0 0 140 150" class="w-full h-full hidden" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Perisai Putih Berbingkai Hitam -->
+                                        <path d="M26 7 H114 C114 21 123 28 133 28 V86 C133 118 103 137 70 146 C37 137 7 118 7 86 V28 C17 28 26 21 26 7 Z"
+                                              fill="#ffffff" stroke="#18181b" stroke-width="5" stroke-linejoin="round"/>
+                                        <!-- Obor Api Merah & Dudukan Kuning -->
+                                        <path d="M64 27 L60 13 Q70 5 73 16 Q78 13 77 27 Z" fill="#dc2626" stroke="#18181b" stroke-width="2.2" stroke-linejoin="round"/>
+                                        <polygon points="56,39 84,39 78,27 62,27" fill="#eab308" stroke="#18181b" stroke-width="2.2" stroke-linejoin="round"/>
+                                        <!-- Bagian Atas Perisai Biru Bertuliskan SMK -->
+                                        <path d="M46 39 H94 L102 52 H38 Z" fill="#0ea5e9" stroke="#18181b" stroke-width="2.5" stroke-linejoin="round"/>
+                                        <text x="70" y="49.5" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="11.5" fill="#ffffff" letter-spacing="0.8">SMK</text>
+                                        <!-- Badan Perisai Biru -->
+                                        <path d="M41 52 H99 C99 65 107 75 107 88 C107 105 89 116 70 122 C51 116 33 105 33 88 C33 75 41 65 41 52 Z"
+                                              fill="#0284c7" stroke="#18181b" stroke-width="2.5" stroke-linejoin="round"/>
+                                        <!-- Buku Terbuka Putih di Tengah -->
+                                        <path d="M50 63 Q60 58 70 64 Q80 58 90 63 V93 Q80 88 70 94 Q60 88 50 93 Z"
+                                              fill="#ffffff" stroke="#18181b" stroke-width="2.2" stroke-linejoin="round"/>
+                                        <line x1="70" y1="64" x2="70" y2="94" stroke="#18181b" stroke-width="2"/>
+                                        <!-- Tulisan Melengkung BUDI MURNI 2 -->
+                                        <text x="70" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="7.8" fill="#ffffff" letter-spacing="0.4">BUDI MURNI 2</text>
+                                        <!-- Tangkai & Bulir Padi Kuning (Kiri) -->
+                                        <path d="M62 132 C34 129 18 104 18 44" fill="none" stroke="#18181b" stroke-width="2.5" stroke-linecap="round"/>
+                                        <ellipse cx="16" cy="52" rx="4.2" ry="8.5" transform="rotate(-25 16 52)" fill="#facc15" stroke="#18181b" stroke-width="1.6"/>
+                                        <ellipse cx="15" cy="70" rx="4.2" ry="8.5" transform="rotate(-25 15 70)" fill="#facc15" stroke="#18181b" stroke-width="1.6"/>
+                                        <ellipse cx="17" cy="88" rx="4.2" ry="8.5" transform="rotate(-25 17 88)" fill="#facc15" stroke="#18181b" stroke-width="1.6"/>
+                                        <ellipse cx="23" cy="105" rx="4.2" ry="8.5" transform="rotate(-35 23 105)" fill="#facc15" stroke="#18181b" stroke-width="1.6"/>
+                                        <ellipse cx="33" cy="119" rx="4" ry="8" transform="rotate(-45 33 119)" fill="#facc15" stroke="#18181b" stroke-width="1.6"/>
+                                        <!-- Tangkai & Bunga Kapas Hijau-Putih (Kanan) -->
+                                        <path d="M78 132 C106 129 122 104 122 44" fill="none" stroke="#18181b" stroke-width="2.5" stroke-linecap="round"/>
+                                        <g>
+                                            <circle cx="123" cy="52" r="6" fill="#ffffff" stroke="#18181b" stroke-width="1.6"/>
+                                            <path d="M117.5 53 A6 6 0 0 0 128.5 53 Z" fill="#16a34a"/>
+                                            <circle cx="124" cy="72" r="6" fill="#ffffff" stroke="#18181b" stroke-width="1.6"/>
+                                            <path d="M118.5 73 A6 6 0 0 0 129.5 73 Z" fill="#16a34a"/>
+                                            <circle cx="121" cy="92" r="6" fill="#ffffff" stroke="#18181b" stroke-width="1.6"/>
+                                            <path d="M115.5 93 A6 6 0 0 0 126.5 93 Z" fill="#16a34a"/>
+                                            <circle cx="112" cy="110" r="6" fill="#ffffff" stroke="#18181b" stroke-width="1.6"/>
+                                            <path d="M106.5 111 A6 6 0 0 0 117.5 111 Z" fill="#16a34a"/>
+                                        </g>
+                                        <!-- Pita Pengikat Bawah -->
+                                        <rect x="57" y="123" width="26" height="11" rx="4" fill="#ffffff" stroke="#18181b" stroke-width="2.2"/>
+                                        <line x1="65" y1="123" x2="65" y2="134" stroke="#18181b" stroke-width="1.8"/>
+                                        <line x1="75" y1="123" x2="75" y2="134" stroke="#18181b" stroke-width="1.8"/>
+                                        <rect x="61" y="134" width="18" height="7" rx="2" fill="#dc2626" stroke="#18181b" stroke-width="1.8"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Pemisah Vertikal Elegan -->
+                            <div class="h-14 w-px bg-gradient-to-b from-transparent via-gold-400/60 to-transparent"></div>
+
+                            <!-- 2. Custom Emblem SVG BKK Keren -->
+                            <div class="relative w-20 h-20 group flex-shrink-0">
+                                <div class="absolute inset-0 bg-cyan-500/20 rounded-full blur-xl group-hover:bg-gold-500/30 transition-all duration-500"></div>
+                                <svg viewBox="0 0 160 160" class="w-full h-full relative z-10 drop-shadow-[0_8px_16px_rgba(6,182,212,0.25)]" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Pita Bawah -->
+                                    <rect x="46" y="118" width="68" height="16" rx="8" fill="url(#goldMetallic)"/>
+                                    <text x="80" y="129" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="9.5" fill="#050d1f" letter-spacing="1.2">BKK • BM2</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold-500/20 text-gold-400 border border-gold-500/30 mb-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
+                            Official Career Portal
+                        </span>
+                        <h2 class="font-display font-extrabold text-base tracking-tight text-white">BKK SMK BUDI MURNI 2</h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Tracer Study Alumni 2020 – 2050</p>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi -->
+                <nav class="p-4 space-y-1.5">
+                    <p class="px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2">Menu Utama</p>
+
+                    <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-item w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium transition-all bg-gradient-to-r from-cyan-500/20 to-blue-600/10 text-cyan-300 border border-cyan-500/30 shadow-sm">
+                        <i data-lucide="layout-dashboard" class="w-5 h-5 text-cyan-400"></i>
+                        <span>Dashboard Statistik</span>
+                    </button>
+
+                    <button onclick="switchTab('input')" id="nav-input" class="nav-item w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">
+                        <i data-lucide="user-plus" class="w-5 h-5 text-gold-400"></i>
+                        <span>Isi / Update Tracer Study</span>
+                    </button>
+
+                    <button onclick="switchTab('database')" id="nav-database" class="nav-item w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="database" class="w-5 h-5 text-emerald-400"></i>
+                            <span>Database Alumni</span>
+                        </div>
+                        <span id="sidebarBadgeCount" class="px-2 py-0.5 text-xs font-bold rounded-full bg-navy-800 text-cyan-300 border border-cyan-500/20">0</span>
+                    </button>
+
+                    <button onclick="switchTab('lowongan')" id="nav-lowongan" class="nav-item w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="briefcase" class="w-5 h-5 text-purple-400"></i>
+                            <span>Info Lowongan Kerja</span>
+                        </div>
+                        <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-gold-500/20 text-gold-400">Baru</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Kartu Profil Alumni yang Sedang Login & Tombol Logout -->
+            <div class="p-4 m-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm space-y-3">
+                <div class="flex items-start gap-3">
+                    <div id="sidebarUserAvatar" class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-amber-600 text-navy-950 font-display font-extrabold text-sm flex items-center justify-center flex-shrink-0 shadow-md">
+                        AL
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p id="sidebarUserName" class="text-xs font-bold text-white truncate">Nama Alumni</p>
+                        <p id="sidebarUserMeta" class="text-[11px] text-cyan-300 font-mono truncate">NIK: - • Lulus -</p>
+                        <p id="sidebarUserJurusan" class="text-[10px] text-slate-400 truncate mt-0.5">Kompetensi Keahlian</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-white/10">
+                    <span id="sidebarUserStatusBadge" class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                        Akun Alumni Aktif
+                    </span>
+                    <button onclick="logoutUser()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/20 hover:bg-rose-600 text-rose-300 hover:text-white text-[11px] font-bold border border-rose-500/30 transition cursor-pointer">
+                        <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+                        <span>Keluar</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay Mobile Sidebar -->
+        <div id="sidebarOverlay" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-40 hidden lg:hidden"></div>
+
+        <!-- Konten Utama -->
+        <main class="flex-1 flex flex-col min-w-0">
+
+            <!-- Top Bar Desktop -->
+            <div class="hidden lg:flex items-center justify-between bg-white/80 backdrop-blur-md border-b border-slate-200/80 px-8 py-4 sticky top-0 z-30">
+                <div>
+                    <h2 id="pageTitle" class="font-display font-bold text-xl text-navy-950">Dashboard Statistik Alumni</h2>
+                    <p id="pageSubtitle" class="text-xs text-slate-500">Ringkasan serapan lulusan SMK Budi Murni 2 ke dunia kerja, perguruan tinggi, dan wirausaha</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="switchTab('input')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold shadow-sm transition cursor-pointer">
+                        <i data-lucide="plus-circle" class="w-4 h-4 text-gold-400"></i>
+                        <span>Tambah Data Alumni</span>
+                    </button>
+                    <button onclick="exportToCSV()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition cursor-pointer">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span>Ekspor CSV / Excel</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Area Halaman Dinamis -->
+            <div class="p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto flex-1">
+
+                <!-- ==================== TAB 1: DASHBOARD ==================== -->
+                <section id="tab-dashboard" class="space-y-6">
+                    <!-- Hero Banner -->
+                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-navy-950 via-navy-900 to-navy-800 text-white p-6 sm:p-8 shadow-xl border border-navy-700">
+                        <div class="absolute right-0 top-0 -mt-12 -mr-12 w-64 h-64 rounded-full bg-cyan-500/15 blur-3xl pointer-events-none"></div>
+                        <div class="absolute left-1/2 bottom-0 -mb-16 w-72 h-72 rounded-full bg-gold-500/10 blur-3xl pointer-events-none"></div>
+
+                        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div class="max-w-2xl">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-cyan-300 text-xs font-semibold mb-3">
+                                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-400"></i>
+                                    <span>Sistem Informasi Bursa Kerja Khusus</span>
+                                </div>
+                                <h1 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight leading-tight">
+                                    Selamat Datang di Portal Alumni <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-cyan-300">SMK Budi Murni 2</span>
+                                </h1>
+                                <p class="text-slate-300 text-sm mt-2.5 leading-relaxed">
+                                    Pantau perkembangan karier lulusan dari tahun <strong>2020 hingga 2050</strong>. Daftarkan status terbaru Anda untuk mendukung akreditasi sekolah dan informasi lowongan kerja mitra industri.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap sm:flex-nowrap gap-3 flex-shrink-0">
+                                <button onclick="switchTab('input')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-navy-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition cursor-pointer">
+                                    <i data-lucide="user-plus" class="w-4 h-4"></i>
+                                    <span>Isi Data Alumni</span>
+                                </button>
+                                <button onclick="switchTab('database')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/20 font-semibold text-sm backdrop-blur-xs transition cursor-pointer">
+                                    <i data-lucide="search" class="w-4 h-4 text-cyan-400"></i>
+                                    <span>Lihat Database</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Metrik Statistik -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-4">
+                        <!-- Total Alumni -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Alumni</span>
+                                <div class="w-10 h-10 rounded-xl bg-navy-900/10 text-navy-900 flex items-center justify-center">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <h3 id="statTotal" class="font-display font-extrabold text-3xl text-navy-950">0</h3>
+                                <span class="text-xs font-medium text-slate-400">terdata</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1.5">Angkatan 2020 – 2050</p>
+                        </div>
+
+                        <!-- Bekerja -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-emerald-600">Bekerja</span>
+                                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                                    <i data-lucide="briefcase" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <h3 id="statBekerja" class="font-display font-extrabold text-3xl text-slate-900">0</h3>
+                                <span id="pctBekerja" class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">0%</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1.5">Terserap di Perusahaan / Industri</p>
+                        </div>
+
+                        <!-- Melanjutkan Kuliah -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-blue-600">Kuliah</span>
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                                    <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <h3 id="statKuliah" class="font-display font-extrabold text-3xl text-slate-900">0</h3>
+                                <span id="pctKuliah" class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">0%</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1.5">Perguruan Tinggi Negeri / Swasta</p>
+                        </div>
+
+                        <!-- Wirausaha -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-amber-600">Wirausaha</span>
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+                                    <i data-lucide="store" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <h3 id="statWirausaha" class="font-display font-extrabold text-3xl text-slate-900">0</h3>
+                                <span id="pctWirausaha" class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">0%</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1.5">Membuka Usaha Mandiri / UMKM</p>
+                        </div>
+
+                        <!-- Mencari Kerja -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-rose-600">Mencari Kerja</span>
+                                <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <h3 id="statMencari" class="font-display font-extrabold text-3xl text-slate-900">0</h3>
+                                <span id="pctMencari" class="text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">0%</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1.5">Dalam Proses Penyaluran BKK</p>
+                        </div>
+                    </div>
+
+                    <!-- Grafik & Statistik Jurusan -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <!-- Chart Status Alumni -->
+                        <div class="lg:col-span-5 bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs flex flex-col">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <h3 class="font-display font-bold text-base text-navy-950">Distribusi Status Alumni</h3>
+                                    <p class="text-xs text-slate-500">Proporsi keterserapan lulusan saat ini</p>
+                                </div>
+                                <span class="p-2 rounded-lg bg-slate-100 text-slate-600">
+                                    <i data-lucide="pie-chart" class="w-4 h-4"></i>
+                                </span>
+                            </div>
+                            <div class="relative flex-1 min-h-[250px] flex items-center justify-center">
+                                <canvas id="statusChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Chart Sebaran Per Jurusan -->
+                        <div class="lg:col-span-7 bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs flex flex-col">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <h3 class="font-display font-bold text-base text-navy-950">Statistik Alumni per Kompetensi Keahlian</h3>
+                                    <p class="text-xs text-slate-500">Jumlah alumni terdaftar berdasarkan jurusan di SMK Budi Murni 2</p>
+                                </div>
+                                <span class="p-2 rounded-lg bg-slate-100 text-slate-600">
+                                    <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+                                </span>
+                            </div>
+                            <div class="relative flex-1 min-h-[250px]">
+                                <canvas id="jurusanChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alumni Terbaru -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
+                        <div class="p-5 sm:p-6 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <h3 class="font-display font-bold text-base text-navy-950">Update Data Alumni Terbaru</h3>
+                                <p class="text-xs text-slate-500">5 entri alumni terbaru yang masuk ke sistem BKK</p>
+                            </div>
+                            <button onclick="switchTab('database')" class="text-xs font-semibold text-cyan-600 hover:text-cyan-700 inline-flex items-center gap-1 cursor-pointer">
+                                <span>Lihat Semua Database</span>
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-50/80 text-slate-500 text-[11px] uppercase tracking-wider border-b border-slate-200/80">
+                                        <th class="py-3.5 px-5 font-semibold">Nama Alumni</th>
+                                        <th class="py-3.5 px-5 font-semibold">Jurusan</th>
+                                        <th class="py-3.5 px-5 font-semibold">Tahun Lulus</th>
+                                        <th class="py-3.5 px-5 font-semibold">Status</th>
+                                        <th class="py-3.5 px-5 font-semibold">Instansi / Usaha</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentAlumniTable" class="divide-y divide-slate-100 text-sm">
+                                    <!-- Diisi via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== TAB 2: FORMULIR INPUT ALUMNI ==================== -->
+                <section id="tab-input" class="hidden max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden">
+                        <!-- Header Form -->
+                        <div class="bg-gradient-to-r from-navy-950 to-navy-800 px-6 py-6 sm:px-8 text-white flex items-center justify-between">
+                            <div>
+                                <span id="formModeBadge" class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 mb-2">
+                                    Formulir Tracer Study
+                                </span>
+                                <h2 id="formHeading" class="font-display font-bold text-xl sm:text-2xl">Penginputan Data Alumni (2020 – 2050)</h2>
+                                <p class="text-xs sm:text-sm text-slate-300 mt-1">Lengkapi biodata dan status karier terkini alumni SMK Budi Murni 2 dengan akurat.</p>
+                            </div>
+                            <div class="hidden sm:flex w-14 h-14 rounded-2xl bg-white/10 border border-white/15 items-center justify-center text-gold-400">
+                                <i data-lucide="file-spreadsheet" class="w-7 h-7"></i>
+                            </div>
+                        </div>
+
+                        <!-- Form Body -->
+                        <form id="alumniForm" class="p-6 sm:p-8 space-y-6">
+                            <input type="hidden" id="editId" value="">
+
+                            <!-- Bagian 1: Identitas Pribadi -->
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-navy-800 flex items-center gap-2 pb-2 border-b border-slate-100 mb-4">
+                                    <i data-lucide="user-check" class="w-4 h-4 text-cyan-600"></i>
+                                    <span>1. Identitas & Akademik Alumni</span>
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <!-- NIK 16 Digit -->
+                                    <div>
+                                        <label for="nik" class="block text-xs font-semibold text-slate-700 mb-1.5">NIK Alumni (16 Digit) <span class="text-rose-500">*</span></label>
+                                        <input type="text" id="nik" inputmode="numeric" maxlength="16" required
+                                            oninput="this.value = this.value.replace(/\D/g, '').slice(0, 16)"
+                                            placeholder="Contoh: 1271011505020001"
+                                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm font-mono tracking-wider focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+                                    </div>
+
+                                    <!-- Nama Lengkap -->
+                                    <div>
+                                        <label for="nama" class="block text-xs font-semibold text-slate-700 mb-1.5">Nama Lengkap <span class="text-rose-500">*</span></label>
+                                        <input type="text" id="nama" required placeholder="Contoh: Budi Santoso, S.Kom"
+                                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+                                    </div>
+
+                                    <!-- Jurusan -->
+                                    <div>
+                                        <label for="jurusan" class="block text-xs font-semibold text-slate-700 mb-1.5">Kompetensi Keahlian / Jurusan <span class="text-rose-500">*</span></label>
+                                        <select id="jurusan" required
+                                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+                                            <option value="">-- Pilih Jurusan --</option>
+                                            <option value="Teknik Komputer dan Jaringan">Teknik Komputer dan Jaringan (TKJ)</option>
+                                            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak / MM / DKV</option>
+                                            <option value="Akuntansi dan Keuangan Lembaga">Akuntansi dan Keuangan Lembaga (AKL)</option>
+                                            <option value="Otomatisasi dan Tata Kelola Perkantoran">Otomatisasi dan Tata Kelola Perkantoran (OTKP)</option>
+                                            <option value="Bisnis Daring dan Pemasaran">Bisnis Daring dan Pemasaran (BDP)</option>
+                                            <option value="Teknik Kendaraan Ringan Otomotif">Teknik Kendaraan Ringan Otomotif (TKR)</option>
+                                            <option value="Teknik dan Bisnis Sepeda Motor">Teknik dan Bisnis Sepeda Motor (TBSM)</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Tahun Lulus 2020 - 2050 -->
+                                    <div>
+                                        <label for="tahunLulus" class="block text-xs font-semibold text-slate-700 mb-1.5">Tahun Lulus (2020 – 2050) <span class="text-rose-500">*</span></label>
+                                        <select id="tahunLulus" required
+                                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white font-medium text-navy-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+                                            <option value="">-- Pilih Tahun Lulus (2020 - 2050) --</option>
+                                            <!-- Opsi 2020 s/d 2050 akan digenerate otomatis via JavaScript -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bagian 2: Status Karier / Pendidikan -->
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-navy-800 flex items-center gap-2 pb-2 border-b border-slate-100 mb-4">
+                                    <i data-lucide="briefcase" class="w-4 h-4 text-gold-500"></i>
+                                    <span>2. Status Penelusuran Karier / Pendidikan</span>
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <!-- Status Saat Ini -->
+                                    <div class="md:col-span-2">
+                                        <label for="status" class="block text-xs font-semibold text-slate-700 mb-1.5">Status Alumni Saat Ini <span class="text-rose-500">*</span></label>
+                                        <select id="status" required onchange="updateDynamicLabels()"
+                                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white font-medium focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+                                            <option value="Bekerja">Bekerja (Karyawan Swasta / BUMN / ASN / Industri)</option>
+                                            <option value="Melanjutkan Kuliah">Melanjutkan Kuliah (Universitas / Politeknik / Akademi)</option>
+                                            <option value="Wirausaha">Wirausaha (Pemilik Usaha / Freelancer Profesional)</option>
+                                            <option value="Belum Bekerja">Belum Bekerja / Mencari Kerja (Siap Disalurkan BKK)</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Nama Perusahaan / Universitas / Usaha -->
+                                    <div id="instansiWrapper">
+                                        <label id="instansiLabel" for="instansi" class="block text-xs font-semibold text-slate-700 mb-1.5">Nama Perusahaan / Instansi <span class="text-rose-500">*</span></label>
+                                        <input type="text" id="instansi" required placeholder="Contoh: PT Astra Honda Motor"
+                                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+                                    </div>
+
+                                    <!-- Jabatan / Program Studi -->
+                                    <div id="jabatanWrapper">
+                                        <label id="jabatanLabel" for="jabatan" class="block text-xs font-semibold text-slate-700 mb-1.5">Jabatan / Posisi Kerja <span class="text-rose-500">*</span></label>
+                                        <input type="text" id="jabatan" required placeholder="Contoh: Staff IT Support / Operator Produksi"
+                                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bagian 3: Kontak & Alamat -->
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-navy-800 flex items-center gap-2 pb-2 border-b border-slate-100 mb-4">
+                                    <i data-lucide="phone-call" class="w-4 h-4 text-emerald-600"></i>
+                                    <span>3. Kontak & Domisili</span>
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <!-- Nomor WhatsApp -->
+                                    <div>
+                                        <label for="whatsapp" class="block text-xs font-semibold text-slate-700 mb-1.5">Nomor WhatsApp Aktif <span class="text-rose-500">*</span></label>
+                                        <input type="tel" id="whatsapp" required placeholder="Contoh: 081234567890"
+                                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+                                    </div>
+
+                                    <!-- Alamat Domisili -->
+                                    <div>
+                                        <label for="alamat" class="block text-xs font-semibold text-slate-700 mb-1.5">Alamat Domisili Saat Ini <span class="text-rose-500">*</span></label>
+                                        <input type="text" id="alamat" required placeholder="Contoh: Jl. Merdeka No. 45, Medan / Jakarta"
+                                            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tombol Aksi Form -->
+                            <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-end gap-3">
+                                <button type="button" onclick="resetForm()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-sm font-semibold transition cursor-pointer">
+                                    Reset Formulir
+                                </button>
+                                <button type="submit" id="submitBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-navy-900 to-navy-800 hover:from-navy-800 hover:to-navy-700 text-white text-sm font-bold shadow-md transition cursor-pointer">
+                                    <i data-lucide="save" class="w-4 h-4 text-gold-400"></i>
+                                    <span id="submitBtnText">Simpan Data Alumni</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- ==================== TAB 3: DATABASE ALUMNI ==================== -->
+                <section id="tab-database" class="hidden space-y-5">
+                    <!-- Filter & Search Bar -->
+                    <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs space-y-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                            <div>
+                                <h3 class="font-display font-bold text-lg text-navy-950">Database Alumni SMK Budi Murni 2</h3>
+                                <p class="text-xs text-slate-500">Kelola, filter berdasarkan tahun kelulusan (2020–2050), edit, atau ekspor data alumni.</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <button onclick="switchTab('input')" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold transition cursor-pointer">
+                                    <i data-lucide="plus" class="w-4 h-4 text-gold-400"></i>
+                                    <span>Input Baru</span>
+                                </button>
+                                <button onclick="exportToCSV()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition cursor-pointer">
+                                    <i data-lucide="file-down" class="w-4 h-4"></i>
+                                    <span>Unduh CSV</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Kontrol Pencarian & Filter -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
+                            <!-- Pencarian -->
+                            <div class="relative">
+                                <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                                <input type="text" id="searchInput" oninput="renderTable()" placeholder="Cari Nama, NIK, Perusahaan..."
+                                    class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                            </div>
+
+                            <!-- Filter Tahun Lulus (2020 - 2050) -->
+                            <div>
+                                <select id="filterTahun" onchange="renderTable()"
+                                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    <option value="">Semua Tahun Lulus (2020–2050)</option>
+                                    <!-- Diisi otomatis via JS -->
+                                </select>
+                            </div>
+
+                            <!-- Filter Jurusan -->
+                            <div>
+                                <select id="filterJurusan" onchange="renderTable()"
+                                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    <option value="">Semua Jurusan</option>
+                                    <option value="Teknik Komputer dan Jaringan">Teknik Komputer dan Jaringan</option>
+                                    <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak / MM / DKV</option>
+                                    <option value="Akuntansi dan Keuangan Lembaga">Akuntansi dan Keuangan Lembaga</option>
+                                    <option value="Otomatisasi dan Tata Kelola Perkantoran">Otomatisasi & Tata Kelola Perkantoran</option>
+                                    <option value="Bisnis Daring dan Pemasaran">Bisnis Daring dan Pemasaran</option>
+                                    <option value="Teknik Kendaraan Ringan Otomotif">Teknik Kendaraan Ringan Otomotif</option>
+                                    <option value="Teknik dan Bisnis Sepeda Motor">Teknik dan Bisnis Sepeda Motor</option>
+                                </select>
+                            </div>
+
+                            <!-- Filter Status -->
+                            <div>
+                                <select id="filterStatus" onchange="renderTable()"
+                                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    <option value="">Semua Status Karier</option>
+                                    <option value="Bekerja">Bekerja</option>
+                                    <option value="Melanjutkan Kuliah">Melanjutkan Kuliah</option>
+                                    <option value="Wirausaha">Wirausaha</option>
+                                    <option value="Belum Bekerja">Belum Bekerja / Mencari Kerja</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabel Data Alumni -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-navy-950 text-white text-[11px] uppercase tracking-wider">
+                                        <th class="py-3.5 px-4 font-semibold">No</th>
+                                        <th class="py-3.5 px-4 font-semibold">Nama & NIK</th>
+                                        <th class="py-3.5 px-4 font-semibold">Jurusan</th>
+                                        <th class="py-3.5 px-4 font-semibold">Lulus</th>
+                                        <th class="py-3.5 px-4 font-semibold">Status</th>
+                                        <th class="py-3.5 px-4 font-semibold">Perusahaan / Kampus & Posisi</th>
+                                        <th class="py-3.5 px-4 font-semibold">Kontak & Alamat</th>
+                                        <th class="py-3.5 px-4 font-semibold text-center">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="alumniTableBody" class="divide-y divide-slate-100 text-xs">
+                                    <!-- Baris data dirender via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tableFooterInfo" class="px-5 py-3.5 bg-slate-50 border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-500">
+                            <span id="showingCountText">Menampilkan 0 data alumni</span>
+                            <button onclick="resetFilters()" class="text-cyan-600 hover:text-cyan-700 font-semibold self-start sm:self-auto cursor-pointer">
+                                Reset Filter Pencarian
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== TAB 4: INFO LOWONGAN KERJA BKK ==================== -->
+                <section id="tab-lowongan" class="hidden space-y-6">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 rounded-2xl p-6 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-gold-500/20 text-gold-400 border border-gold-500/30">Mitra Industri BKK</span>
+                            <h3 class="font-display font-bold text-xl mt-2">Informasi Lowongan Kerja Khusus Alumni</h3>
+                            <p class="text-xs text-slate-300 mt-1">Peluang karier resmi dari perusahaan mitra BKK SMK Budi Murni 2.</p>
+                        </div>
+                        <button onclick="switchTab('input')" class="px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-navy-950 font-bold text-xs transition self-start sm:self-auto cursor-pointer">
+                            Update Status Siap Kerja
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <!-- Loker 1 -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-start justify-between gap-3 mb-3">
+                                    <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 font-display font-extrabold flex items-center justify-center text-sm border border-blue-100">
+                                        AHM
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700">Full Time</span>
+                                </div>
+                                <h4 class="font-display font-bold text-base text-navy-950">Operator Produksi & Quality Control</h4>
+                                <p class="text-xs font-semibold text-cyan-700 mt-0.5">PT Astra Honda Motor (Mitra BKK)</p>
+                                <div class="mt-3 space-y-1.5 text-xs text-slate-600">
+                                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> Kawasan Industri Cikarang / Karawang</p>
+                                    <p class="flex items-center gap-2"><i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-slate-400"></i> Lulusan TKRO, TBSM, TKJ, RPL (2020–2026)</p>
+                                    <p class="flex items-center gap-2"><i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-400"></i> Batas Pendaftaran: 30 Desember 2026</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <span class="text-[11px] font-medium text-slate-400">Kode: BKK-01</span>
+                                <button onclick="quickApplyJob('PT Astra Honda Motor - Operator Produksi & QC')" class="px-3.5 py-2 rounded-xl bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold transition cursor-pointer">
+                                    Lamar Cepat (NIK)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Loker 2 -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-start justify-between gap-3 mb-3">
+                                    <div class="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-700 font-display font-extrabold flex items-center justify-center text-sm border border-cyan-100">
+                                        TLK
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700">Full Time</span>
+                                </div>
+                                <h4 class="font-display font-bold text-base text-navy-950">Junior Network & IT Support Technician</h4>
+                                <p class="text-xs font-semibold text-cyan-700 mt-0.5">PT Telkom Akses Regional</p>
+                                <div class="mt-3 space-y-1.5 text-xs text-slate-600">
+                                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> Medan & Sumatera Utara</p>
+                                    <p class="flex items-center gap-2"><i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-slate-400"></i> Lulusan TKJ, RPL, AKL & OTKP (2020–2026)</p>
+                                    <p class="flex items-center gap-2"><i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-400"></i> Batas Pendaftaran: 20 Januari 2027</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <span class="text-[11px] font-medium text-slate-400">Kode: BKK-02</span>
+                                <button onclick="quickApplyJob('PT Telkom Akses - Junior Network & IT Support')" class="px-3.5 py-2 rounded-xl bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold transition cursor-pointer">
+                                    Lamar Cepat (NIK)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Loker 3 -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-start justify-between gap-3 mb-3">
+                                    <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 font-display font-extrabold flex items-center justify-center text-sm border border-amber-100">
+                                        BMR
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-blue-50 text-blue-700">Magang / Kontrak</span>
+                                </div>
+                                <h4 class="font-display font-bold text-base text-navy-950">Staff Administrasi Keuangan & Gudang</h4>
+                                <p class="text-xs font-semibold text-cyan-700 mt-0.5">PT Indomarco Prismatama (Mitra BKK)</p>
+                                <div class="mt-3 space-y-1.5 text-xs text-slate-600">
+                                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> Tanjung Morawa & Medan</p>
+                                    <p class="flex items-center gap-2"><i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-slate-400"></i> Lulusan AKL, OTKP & BDP (2020–2026)</p>
+                                    <p class="flex items-center gap-2"><i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-400"></i> Batas Pendaftaran: 15 Februari 2027</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <span class="text-[11px] font-medium text-slate-400">Kode: BKK-03</span>
+                                <button onclick="quickApplyJob('PT Indomarco Prismatama - Staff Administrasi')" class="px-3.5 py-2 rounded-xl bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold transition cursor-pointer">
+                                    Lamar Cepat (NIK)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer dengan Logo SMK Budi Murni 2 & Logo BKK Berdampingan -->
+            <footer class="border-t border-slate-200/80 bg-white px-6 py-4 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1.5 rounded-xl border border-slate-200/80">
+                        <img src="logo bm kecil.png" alt="Logo SMK Budi Murni 2" class="w-6 h-6 object-contain"
+                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                        <svg viewBox="0 0 120 130" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 6 H98 C98 18 106 24 114 24 V74 C114 102 88 118 60 126 C32 118 6 102 6 74 V24 C14 24 22 18 22 6 Z" fill="#ffffff" stroke="#1e293b" stroke-width="5"/>
+                            <path d="M55 24 L51 12 Q60 4 63 14 Q67 11 66 24 Z" fill="#dc2626"/>
+                            <path d="M36 45 H84 C84 56 91 65 91 76 C91 91 76 100 60 105 C44 100 29 91 29 76 C29 65 36 56 36 45 Z" fill="#0284c7"/>
+                            <path d="M44 55 Q52 51 60 56 Q68 51 76 55 V81 Q68 77 60 82 Q52 77 44 81 Z" fill="#ffffff"/>
+                        </svg>
+                        <span class="h-4 w-px bg-slate-300"></span>
+                        <svg viewBox="0 0 120 120" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M60 8 L104 24 V58 C104 86 84 104 60 114 C36 104 16 86 16 58 V24 L60 8 Z" fill="#0a1938" stroke="#f59e0b" stroke-width="6"/>
+                            <path d="M36 68 L54 50 L66 60 L86 38" fill="none" stroke="#22d3ee" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polygon points="60,22 86,33 60,44 34,33" fill="#fbbf24"/>
+                        </svg>
+                    </div>
+                    <p>&copy; 2026 <strong class="text-navy-950">Bursa Kerja Khusus (BKK) SMK Budi Murni 2</strong>. Hak Cipta Dilindungi.</p>
+                </div>
+                <p class="mt-1 sm:mt-0 font-medium text-slate-600">Database Penelusuran Alumni Tahun 2020 – 2050</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modal Konfirmasi Hapus (Pengganti confirm() bawaan browser) -->
+    <div id="deleteModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/60 backdrop-blur-xs p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 transform transition-all">
+            <div class="flex items-center gap-3 text-rose-600 mb-3">
+                <div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Hapus Data Alumni?</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+                Anda yakin ingin menghapus data alumni <strong id="deleteTargetName" class="text-slate-900"></strong> dari database BKK? Tindakan ini tidak dapat dibatalkan.
+            </p>
+            <div class="mt-6 flex items-center justify-end gap-3">
+                <button onclick="closeDeleteModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-semibold cursor-pointer">
+                    Batal
+                </button>
+                <button id="confirmDeleteBtn" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-sm cursor-pointer">
+                    Ya, Hapus Data
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2.5 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+    <script>
+        // ==========================================
+        // 1. INISIALISASI DATA, AKUN ALUMNI (NIK 16 DIGIT) & TAHUN LULUS 2020-2050
+        // ==========================================
+        const STORAGE_KEY = 'bkk_smk_budimurni2_alumni_nik_v2';
+        const USERS_STORAGE_KEY = 'bkk_smk_budimurni2_users_nik_v2';
+        const SESSION_STORAGE_KEY = 'bkk_smk_budimurni2_session_nik_v2';
+
+        const defaultDummyData = [
+            {
+                id: 'ALM-1001',
+                nama: 'Andi Pratama Siregar',
+                nik: '1271011505020001',
+                jurusan: 'Teknik Komputer dan Jaringan',
+                tahunLulus: '2020',
+                status: 'Bekerja',
+                instansi: 'PT Telkom Akses',
+                jabatan: 'Network Operations Engineer',
+                whatsapp: '081264551290',
+                alamat: 'Jl. Jamin Ginting No. 112, Medan'
+            },
+            {
+                id: 'ALM-1002',
+                nama: 'Siti Rahmawati',
+                nik: '1271022208030002',
+                jurusan: 'Akuntansi dan Keuangan Lembaga',
+                tahunLulus: '2021',
+                status: 'Melanjutkan Kuliah',
+                instansi: 'Universitas Sumatera Utara (USU)',
+                jabatan: 'S1 Akuntansi',
+                whatsapp: '082167883412',
+                alamat: 'Jl. Setia Budi Pasar 2, Medan'
+            },
+            {
+                id: 'ALM-1003',
+                nama: 'Reza Fahlevi Lubis',
+                nik: '1207031011040003',
+                jurusan: 'Teknik Kendaraan Ringan Otomotif',
+                tahunLulus: '2022',
+                status: 'Bekerja',
+                instansi: 'PT Astra Daihatsu Motor',
+                jabatan: 'Teknisi Servis & Diagnostik',
+                whatsapp: '085270918234',
+                alamat: 'Tanjung Morawa, Deli Serdang'
+            },
+            {
+                id: 'ALM-1004',
+                nama: 'Putri Ayu Lestari',
+                nik: '1271040504050004',
+                jurusan: 'Rekayasa Perangkat Lunak',
+                tahunLulus: '2023',
+                status: 'Wirausaha',
+                instansi: 'Budi Murni Creative Digital Studio',
+                jabatan: 'Founder & Web Developer',
+                whatsapp: '081375649021',
+                alamat: 'Jl. Dr. Mansyur No. 88, Medan'
+            },
+            {
+                id: 'ALM-1005',
+                nama: 'Kevin Jonathan Simanjuntak',
+                nik: '1271051909060005',
+                jurusan: 'Otomatisasi dan Tata Kelola Perkantoran',
+                tahunLulus: '2024',
+                status: 'Bekerja',
+                instansi: 'PT Bank Mandiri (Persero) Tbk',
+                jabatan: 'Staff Administrasi Kredit',
+                whatsapp: '082274109823',
+                alamat: 'Jl. Padang Bulan No. 24, Medan'
+            },
+            {
+                id: 'ALM-1006',
+                nama: 'Nadia Khairunnisa',
+                nik: '1271061202070006',
+                jurusan: 'Rekayasa Perangkat Lunak',
+                tahunLulus: '2025',
+                status: 'Melanjutkan Kuliah',
+                instansi: 'Politeknik Negeri Medan (Polmed)',
+                jabatan: 'D4 Teknologi Rekayasa Perangkat Lunak',
+                whatsapp: '085361920485',
+                alamat: 'Jl. Sisingamangaraja, Medan'
+            },
+            {
+                id: 'ALM-1007',
+                nama: 'Dimas Saputra',
+                nik: '1271072806080007',
+                jurusan: 'Teknik dan Bisnis Sepeda Motor',
+                tahunLulus: '2026',
+                status: 'Belum Bekerja',
+                instansi: 'Menunggu Penyaluran BKK',
+                jabatan: 'Kandidat Teknisi Otomotif',
+                whatsapp: '081260987123',
+                alamat: 'Jl. Kapten Muslim, Medan'
+            }
+        ];
+
+        let alumniList = [];
+        let registeredUsers = [];
+        let currentUser = null;
+        let statusChartInstance = null;
+        let jurusanChartInstance = null;
+        let pendingDeleteId = null;
+
+        // ==========================================
+        // SISTEM AUTENTIKASI HANYA DENGAN NIK (16 DIGIT)
+        // ==========================================
+        function sanitizeNikInput(inputEl, counterId) {
+            inputEl.value = inputEl.value.replace(/\D/g, '').slice(0, 16);
+            const counter = document.getElementById(counterId);
+            if (counter) {
+                counter.textContent = `${inputEl.value.length} / 16 digit`;
+                counter.className = inputEl.value.length === 16
+                    ? 'text-[11px] font-mono font-bold text-emerald-400'
+                    : 'text-[11px] font-mono text-cyan-300';
+            }
+        }
+
+        function fillDemoNik(nikValue) {
+            const input = document.getElementById('loginNik');
+            input.value = nikValue;
+            sanitizeNikInput(input, 'nikCounter');
+            document.getElementById('loginForm').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+        }
+
+        function loadAuthData() {
+            try {
+                const usersRaw = localStorage.getItem(USERS_STORAGE_KEY);
+                registeredUsers = usersRaw ? JSON.parse(usersRaw) : defaultDummyData.map(a => ({
+                    nik: a.nik,
+                    nama: a.nama,
+                    jurusan: a.jurusan,
+                    tahunLulus: a.tahunLulus,
+                    whatsapp: a.whatsapp,
+                    role: 'alumni'
+                }));
+                if (!usersRaw) localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(registeredUsers));
+
+                const sessionRaw = localStorage.getItem(SESSION_STORAGE_KEY);
+                currentUser = sessionRaw ? JSON.parse(sessionRaw) : null;
+            } catch (e) {
+                console.error('Gagal memuat sesi login:', e);
+            }
+        }
+
+        function switchAuthTab(mode) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const btnLogin = document.getElementById('tabBtnLogin');
+            const btnReg = document.getElementById('tabBtnRegister');
+
+            if (mode === 'login') {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+                btnLogin.className = 'py-2.5 px-3 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md cursor-pointer';
+                btnReg.className = 'py-2.5 px-3 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all cursor-pointer';
+            } else {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+                btnReg.className = 'py-2.5 px-3 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md cursor-pointer';
+                btnLogin.className = 'py-2.5 px-3 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all cursor-pointer';
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nik = document.getElementById('loginNik').value.trim();
+
+            if (!/^\d{16}$/.test(nik)) {
+                showToast('NIK harus terdiri dari tepat 16 digit angka.', 'warning');
+                return;
+            }
+
+            // Cek di daftar akun NIK maupun di database alumni utama
+            let found = registeredUsers.find(u => u.nik === nik);
+            if (!found) {
+                const fromAlumni = alumniList.find(a => a.nik === nik);
+                if (fromAlumni) {
+                    found = {
+                        nik: fromAlumni.nik,
+                        nama: fromAlumni.nama,
+                        jurusan: fromAlumni.jurusan,
+                        tahunLulus: fromAlumni.tahunLulus,
+                        whatsapp: fromAlumni.whatsapp,
+                        role: 'alumni'
+                    };
+                    registeredUsers.push(found);
+                    localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(registeredUsers));
+                }
+            }
+
+            if (!found) {
+                showToast('NIK belum terdaftar. Silakan lengkapi pendaftaran singkat NIK baru Anda.', 'info');
+                switchAuthTab('register');
+                const regNikInput = document.getElementById('regNik');
+                regNikInput.value = nik;
+                sanitizeNikInput(regNikInput, 'regNikCounter');
+                return;
+            }
+
+            setSessionAndEnter(found);
+            showToast(`Selamat datang, ${found.nama} (NIK: ${found.nik})!`, 'success');
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nik = document.getElementById('regNik').value.trim();
+            const nama = document.getElementById('regNama').value.trim();
+            const jurusan = document.getElementById('regJurusan').value;
+            const tahunLulus = document.getElementById('regTahun').value;
+
+            if (!/^\d{16}$/.test(nik)) {
+                showToast('NIK wajib diisi tepat 16 digit angka.', 'warning');
+                return;
+            }
+
+            const exists = registeredUsers.find(u => u.nik === nik) || alumniList.find(a => a.nik === nik);
+            if (exists) {
+                showToast('NIK sudah terdaftar! Anda langsung masuk ke portal.', 'info');
+                setSessionAndEnter({
+                    nik: exists.nik,
+                    nama: exists.nama,
+                    jurusan: exists.jurusan,
+                    tahunLulus: exists.tahunLulus,
+                    whatsapp: exists.whatsapp || '',
+                    role: 'alumni'
+                });
+                return;
+            }
+
+            const newUser = { nik, nama, tahunLulus, jurusan, whatsapp: '', role: 'alumni' };
+            registeredUsers.push(newUser);
+            localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(registeredUsers));
+
+            setSessionAndEnter(newUser, true);
+            showToast(`NIK ${nik} (${nama}) berhasil terdaftar! Silakan lengkapi data Tracer Study Anda.`, 'success');
+        });
+
+        function loginAsDemo() {
+            const demoUser = {
+                nama: 'Operator / Admin BKK',
+                nik: 'ADMIN-BKK-BM2',
+                jurusan: 'Bursa Kerja Khusus SMK Budi Murni 2',
+                tahunLulus: '2020–2050',
+                role: 'admin'
+            };
+            setSessionAndEnter(demoUser);
+            showToast('Masuk dalam mode Operator / Admin BKK SMK Budi Murni 2.', 'info');
+        }
+
+        function setSessionAndEnter(user, goToForm = false) {
+            currentUser = user;
+            localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(user));
+            updateAuthUI();
+            if (goToForm && user.role === 'alumni') {
+                switchTab('input');
+            } else {
+                switchTab('dashboard');
+            }
+        }
+
+        function logoutUser() {
+            currentUser = null;
+            localStorage.removeItem(SESSION_STORAGE_KEY);
+            updateAuthUI();
+            showToast('Anda telah keluar dari Portal Alumni BKK.', 'info');
+        }
+
+        function updateAuthUI() {
+            const authScreen = document.getElementById('authScreen');
+            const mainApp = document.getElementById('mainAppContainer');
+
+            if (!currentUser) {
+                authScreen.classList.remove('hidden');
+                authScreen.classList.add('flex');
+                mainApp.classList.add('hidden');
+                mainApp.classList.remove('flex');
+                return;
+            }
+
+            authScreen.classList.add('hidden');
+            authScreen.classList.remove('flex');
+            mainApp.classList.remove('hidden');
+            mainApp.classList.add('flex');
+
+            // Update Profil di Sidebar
+            const initials = currentUser.nama.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
+            document.getElementById('sidebarUserAvatar').textContent = initials || 'BM';
+            document.getElementById('sidebarUserName').textContent = currentUser.nama;
+            document.getElementById('sidebarUserMeta').textContent = `NIK: ${currentUser.nik} • Lulus ${currentUser.tahunLulus}`;
+            document.getElementById('sidebarUserJurusan').textContent = currentUser.jurusan;
+
+            const badge = document.getElementById('sidebarUserStatusBadge');
+            if (currentUser.role === 'admin') {
+                badge.textContent = 'Mode Operator / Admin';
+                badge.className = 'px-2 py-0.5 rounded-full text-[10px] font-semibold bg-gold-500/20 text-gold-300 border border-gold-500/30';
+            } else {
+                const existingRecord = alumniList.find(a => a.nik === currentUser.nik);
+                badge.textContent = existingRecord ? `Status: ${existingRecord.status}` : 'Belum Isi Tracer Study';
+                badge.className = existingRecord
+                    ? 'px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                    : 'px-2 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30';
+            }
+
+            prefillFormForCurrentUser();
+            renderTable();
+        }
+
+        function prefillFormForCurrentUser() {
+            if (!currentUser || currentUser.role !== 'alumni') return;
+
+            const existing = alumniList.find(a => a.nik === currentUser.nik);
+            if (existing) {
+                document.getElementById('editId').value = existing.id;
+                document.getElementById('nik').value = existing.nik;
+                document.getElementById('nama').value = existing.nama;
+                document.getElementById('jurusan').value = existing.jurusan;
+                document.getElementById('tahunLulus').value = existing.tahunLulus;
+                document.getElementById('status').value = existing.status;
+                updateDynamicLabels();
+                document.getElementById('instansi').value = existing.instansi;
+                document.getElementById('jabatan').value = existing.jabatan;
+                document.getElementById('whatsapp').value = existing.whatsapp;
+                document.getElementById('alamat').value = existing.alamat;
+
+                document.getElementById('formModeBadge').textContent = 'Data Tracer Study Anda';
+                document.getElementById('formHeading').textContent = `Perbarui Data Karier: ${existing.nama}`;
+                document.getElementById('submitBtnText').textContent = 'Perbarui Data Saya';
+            } else {
+                document.getElementById('editId').value = '';
+                document.getElementById('nik').value = currentUser.nik || '';
+                document.getElementById('nama').value = currentUser.nama || '';
+                document.getElementById('jurusan').value = currentUser.jurusan || '';
+                document.getElementById('tahunLulus').value = currentUser.tahunLulus || '';
+                document.getElementById('whatsapp').value = currentUser.whatsapp || '';
+                document.getElementById('formModeBadge').textContent = 'Auto-Fill Sesi NIK Alumni';
+                document.getElementById('formHeading').textContent = `Lengkapi Data Tracer Study (${currentUser.tahunLulus})`;
+                document.getElementById('submitBtnText').textContent = 'Simpan Data Saya';
+                updateDynamicLabels();
+            }
+        }
+
+        // Load data dari localStorage atau gunakan dummy data awal
+        function loadAlumniData() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) {
+                    alumniList = JSON.parse(stored);
+                } else {
+                    alumniList = [...defaultDummyData];
+                    saveAlumniData();
+                }
+            } catch (e) {
+                console.error('Gagal memuat localStorage:', e);
+                alumniList = [...defaultDummyData];
+            }
+        }
+
+        function saveAlumniData() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(alumniList));
+            } catch (e) {
+                console.error('Gagal menyimpan ke localStorage:', e);
+            }
+        }
+
+        // Generate dropdown Tahun Lulus dari 2020 sampai dengan 2050
+        function populateYearDropdowns() {
+            const formSelect = document.getElementById('tahunLulus');
+            const filterSelect = document.getElementById('filterTahun');
+            const regSelect = document.getElementById('regTahun');
+
+            for (let year = 2020; year <= 2050; year++) {
+                // Opsi untuk Form Input
+                const optForm = document.createElement('option');
+                optForm.value = year.toString();
+                optForm.textContent = `Tahun Lulus ${year}`;
+                formSelect.appendChild(optForm);
+
+                // Opsi untuk Filter Database
+                const optFilter = document.createElement('option');
+                optFilter.value = year.toString();
+                optFilter.textContent = `Lulusan ${year}`;
+                filterSelect.appendChild(optFilter);
+
+                // Opsi untuk Form Registrasi Akun Alumni
+                if (regSelect) {
+                    const optReg = document.createElement('option');
+                    optReg.value = year.toString();
+                    optReg.textContent = `Lulus ${year}`;
+                    regSelect.appendChild(optReg);
+                }
+            }
+        }
+
+        // ==========================================
+        // 2. NAVIGASI TAB & RESPONSIVE SIDEBAR
+        // ==========================================
+        function switchTab(tabName) {
+            const tabs = ['dashboard', 'input', 'database', 'lowongan'];
+            const titles = {
+                dashboard: ['Dashboard Statistik Alumni', 'Ringkasan serapan lulusan SMK Budi Murni 2 ke dunia kerja, perguruan tinggi, dan wirausaha'],
+                input: ['Formulir Pendataan Alumni', 'Input atau perbarui data penelusuran alumni dari tahun 2020 hingga 2050'],
+                database: ['Database Alumni BKK', 'Pencarian, pemfilteran angkatan 2020–2050, pengelolaan, dan ekspor data alumni'],
+                lowongan: ['Info Lowongan Kerja Mitra BKK', 'Daftar peluang kerja terbaru khusus lulusan SMK Budi Murni 2']
+            };
+
+            tabs.forEach(t => {
+                const section = document.getElementById(`tab-${t}`);
+                const navBtn = document.getElementById(`nav-${t}`);
+                if (t === tabName) {
+                    section.classList.remove('hidden');
+                    navBtn.className = 'nav-item w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium transition-all bg-gradient-to-r from-cyan-500/20 to-blue-600/10 text-cyan-300 border border-cyan-500/30 shadow-sm cursor-pointer';
+                } else {
+                    section.classList.add('hidden');
+                    navBtn.className = 'nav-item w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all cursor-pointer';
+                }
+            });
+
+            if (titles[tabName]) {
+                document.getElementById('pageTitle').textContent = titles[tabName][0];
+                document.getElementById('pageSubtitle').textContent = titles[tabName][1];
+            }
+
+            // Tutup mobile sidebar jika terbuka
+            closeMobileSidebar();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        function openMobileSidebar() {
+            sidebar.classList.remove('-translate-x-full');
+            sidebarOverlay.classList.remove('hidden');
+        }
+
+        function closeMobileSidebar() {
+            sidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileSidebar);
+        sidebarOverlay.addEventListener('click', closeMobileSidebar);
+
+        // ==========================================
+        // 3. LOGIKA FORMULIR & CRUD ALUMNI
+        // ==========================================
+        function updateDynamicLabels() {
+            const status = document.getElementById('status').value;
+            const instansiLabel = document.getElementById('instansiLabel');
+            const instansiInput = document.getElementById('instansi');
+            const jabatanLabel = document.getElementById('jabatanLabel');
+            const jabatanInput = document.getElementById('jabatan');
+
+            if (status === 'Bekerja') {
+                instansiLabel.innerHTML = 'Nama Perusahaan / Instansi <span class="text-rose-500">*</span>';
+                instansiInput.placeholder = 'Contoh: PT Astra Honda Motor / PT Telkom';
+                jabatanLabel.innerHTML = 'Jabatan / Posisi Kerja <span class="text-rose-500">*</span>';
+                jabatanInput.placeholder = 'Contoh: Staff IT Support / Teknisi';
+                if (instansiInput.value === 'Menunggu Penyaluran BKK') instansiInput.value = '';
+            } else if (status === 'Melanjutkan Kuliah') {
+                instansiLabel.innerHTML = 'Nama Universitas / Politeknik <span class="text-rose-500">*</span>';
+                instansiInput.placeholder = 'Contoh: Universitas Sumatera Utara / Polmed';
+                jabatanLabel.innerHTML = 'Program Studi / Jurusan Kuliah <span class="text-rose-500">*</span>';
+                jabatanInput.placeholder = 'Contoh: S1 Teknik Informatika / D3 Akuntansi';
+                if (instansiInput.value === 'Menunggu Penyaluran BKK') instansiInput.value = '';
+            } else if (status === 'Wirausaha') {
+                instansiLabel.innerHTML = 'Nama Usaha / Brand Bisnis <span class="text-rose-500">*</span>';
+                instansiInput.placeholder = 'Contoh: Bengkel Maju Jaya / Digital Printing';
+                jabatanLabel.innerHTML = 'Bidang Usaha / Peran <span class="text-rose-500">*</span>';
+                jabatanInput.placeholder = 'Contoh: Pemilik Usaha Otomotif / Kuliner';
+                if (instansiInput.value === 'Menunggu Penyaluran BKK') instansiInput.value = '';
+            } else {
+                instansiLabel.innerHTML = 'Keterangan / Target Industri <span class="text-rose-500">*</span>';
+                instansiInput.value = 'Menunggu Penyaluran BKK';
+                jabatanLabel.innerHTML = 'Minat Posisi Pekerjaan <span class="text-rose-500">*</span>';
+                jabatanInput.placeholder = 'Contoh: Administrasi / Operator / Teknisi';
+            }
+        }
+
+        document.getElementById('alumniForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const editId = document.getElementById('editId').value;
+            const nik = document.getElementById('nik').value.trim();
+            const nama = document.getElementById('nama').value.trim();
+            const jurusan = document.getElementById('jurusan').value;
+            const tahunLulus = document.getElementById('tahunLulus').value;
+            const status = document.getElementById('status').value;
+            const instansi = document.getElementById('instansi').value.trim();
+            const jabatan = document.getElementById('jabatan').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const alamat = document.getElementById('alamat').value.trim();
+
+            if (!/^\d{16}$/.test(nik)) {
+                showToast('NIK Alumni wajib terdiri dari 16 digit angka.', 'warning');
+                return;
+            }
+
+            if (editId) {
+                // Mode Edit
+                const idx = alumniList.findIndex(item => item.id === editId);
+                if (idx !== -1) {
+                    alumniList[idx] = {
+                        ...alumniList[idx],
+                        nik, nama, jurusan, tahunLulus, status, instansi, jabatan, whatsapp, alamat
+                    };
+                    showToast(`Data alumni "${nama}" berhasil diperbarui!`, 'success');
+                }
+            } else {
+                // Mode Tambah Baru
+                const newAlumni = {
+                    id: 'ALM-' + Date.now().toString().slice(-6),
+                    nik, nama, jurusan, tahunLulus, status, instansi, jabatan, whatsapp, alamat
+                };
+                alumniList.unshift(newAlumni);
+                showToast(`Data alumni "${nama}" (Lulusan ${tahunLulus}) berhasil disimpan!`, 'success');
+            }
+
+            // Sinkronkan juga ke daftar akun NIK agar bisa login langsung
+            const uIdx = registeredUsers.findIndex(u => u.nik === nik);
+            if (uIdx !== -1) {
+                registeredUsers[uIdx] = { ...registeredUsers[uIdx], nama, jurusan, tahunLulus, whatsapp };
+            } else {
+                registeredUsers.push({ nik, nama, jurusan, tahunLulus, whatsapp, role: 'alumni' });
+            }
+            localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(registeredUsers));
+
+            saveAlumniData();
+            resetForm();
+            refreshAllViews();
+            updateAuthUI();
+            switchTab('database');
+        });
+
+        function editAlumni(id) {
+            const item = alumniList.find(a => a.id === id);
+            if (!item) return;
+
+            document.getElementById('editId').value = item.id;
+            document.getElementById('nik').value = item.nik;
+            document.getElementById('nama').value = item.nama;
+            document.getElementById('jurusan').value = item.jurusan;
+            document.getElementById('tahunLulus').value = item.tahunLulus;
+            document.getElementById('status').value = item.status;
+            updateDynamicLabels();
+            document.getElementById('instansi').value = item.instansi;
+            document.getElementById('jabatan').value = item.jabatan;
+            document.getElementById('whatsapp').value = item.whatsapp;
+            document.getElementById('alamat').value = item.alamat;
+
+            document.getElementById('formModeBadge').textContent = 'Mode Edit Data Alumni';
+            document.getElementById('formHeading').textContent = `Edit Data: ${item.nama}`;
+            document.getElementById('submitBtnText').textContent = 'Simpan Perubahan';
+
+            switchTab('input');
+        }
+
+        function promptDeleteAlumni(id) {
+            const item = alumniList.find(a => a.id === id);
+            if (!item) return;
+            pendingDeleteId = id;
+            document.getElementById('deleteTargetName').textContent = `${item.nama} (NIK: ${item.nik})`;
+            const modal = document.getElementById('deleteModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeDeleteModal() {
+            pendingDeleteId = null;
+            const modal = document.getElementById('deleteModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+            if (!pendingDeleteId) return;
+            alumniList = alumniList.filter(a => a.id !== pendingDeleteId);
+            saveAlumniData();
+            closeDeleteModal();
+            refreshAllViews();
+            updateAuthUI();
+            showToast('Data alumni berhasil dihapus dari database.', 'info');
+        });
+
+        function quickApplyJob(jobTitle) {
+            if (!currentUser || currentUser.role !== 'alumni') {
+                showToast('Silakan masuk menggunakan NIK alumni untuk melamar lowongan secara cepat.', 'info');
+                return;
+            }
+            showToast(`Lamaran "${jobTitle}" berhasil diajukan atas nama ${currentUser.nama} (NIK: ${currentUser.nik})!`, 'success');
+        }
+
+        function getStatusBadge(status) {
+            const map = {
+                'Bekerja': 'bg-emerald-50 text-emerald-700 border-emerald-200',
+                'Melanjutkan Kuliah': 'bg-blue-50 text-blue-700 border-blue-200',
+                'Wirausaha': 'bg-amber-50 text-amber-700 border-amber-200',
+                'Belum Bekerja': 'bg-rose-50 text-rose-700 border-rose-200',
+                'Mencari Kerja': 'bg-rose-50 text-rose-700 border-rose-200'
+            };
+            const cls = map[status] || 'bg-slate-100 text-slate-700 border-slate-200';
+            return `<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold border ${cls}">${escapeHTML(status)}</span>`;
+        }
+
+        function formatDisplayNik(nik) {
+            if (!nik) return '-';
+            if (currentUser && currentUser.role === 'admin') return nik;
+            if (currentUser && currentUser.nik === nik) return nik;
+            return nik.slice(0, 6) + '••••••' + nik.slice(-4);
+        }
+            } else {
+                // Mode Tambah Baru
+                const newAlumni = {
+                    id: 'ALM-' + Date.now().toString().slice(-6),
+                    nama, nisn, jurusan, tahunLulus, status, instansi, jabatan, whatsapp, alamat
+                };
+                alumniList.unshift(newAlumni);
+                showToast(`Data alumni "${nama}" (Lulusan ${tahunLulus}) berhasil disimpan!`, 'success');
+            }
+
+            saveAlumniData();
+            resetForm();
+            refreshAllViews();
+            updateAuthUI();
+            switchTab('database');
+        });
+
+        function editAlumni(id) {
+            const item = alumniList.find(a => a.id === id);
+            if (!item) return;
+
+            document.getElementById('editId').value = item.id;
+            document.getElementById('nama').value = item.nama;
+            document.getElementById('nisn').value = item.nisn;
+            document.getElementById('jurusan').value = item.jurusan;
+            document.getElementById('tahunLulus').value = item.tahunLulus;
+            document.getElementById('status').value = item.status;
+            updateDynamicLabels();
+            document.getElementById('instansi').value = item.instansi;
+            document.getElementById('jabatan').value = item.jabatan;
+            document.getElementById('whatsapp').value = item.whatsapp;
+            document.getElementById('alamat').value = item.alamat;
+
+            document.getElementById('formModeBadge').textContent = 'Mode Edit Data Alumni';
+            document.getElementById('formHeading').textContent = `Edit Data: ${item.nama}`;
+            document.getElementById('submitBtnText').textContent = 'Simpan Perubahan';
+
+            switchTab('input');
+        }
+
+        function resetForm() {
+            document.getElementById('alumniForm').reset();
+            document.getElementById('editId').value = '';
+            document.getElementById('formModeBadge').textContent = 'Formulir Tracer Study';
+            document.getElementById('formHeading').textContent = 'Penginputan Data Alumni (2020 – 2050)';
+            document.getElementById('submitBtnText').textContent = 'Simpan Data Alumni';
+            updateDynamicLabels();
+            if (currentUser && currentUser.role === 'alumni') {
+                prefillFormForCurrentUser();
+            }
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('alumniTableBody');
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const fTahun = document.getElementById('filterTahun').value;
+            const fJurusan = document.getElementById('filterJurusan').value;
+            const fStatus = document.getElementById('filterStatus').value;
+
+            const filtered = alumniList.filter(item => {
+                const matchQuery = !query ||
+                    item.nama.toLowerCase().includes(query) ||
+                    (item.nik && item.nik.toLowerCase().includes(query)) ||
+                    item.instansi.toLowerCase().includes(query) ||
+                    item.jabatan.toLowerCase().includes(query);
+                const matchTahun = !fTahun || item.tahunLulus === fTahun;
+                const matchJurusan = !fJurusan || item.jurusan === fJurusan;
+                const matchStatus = !fStatus || item.status === fStatus;
+                return matchQuery && matchTahun && matchJurusan && matchStatus;
+            });
+
+            document.getElementById('showingCountText').textContent = `Menampilkan ${filtered.length} dari ${alumniList.length} total data alumni`;
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="8" class="py-12 px-4 text-center text-slate-400">
+                            <div class="flex flex-col items-center justify-center">
+                                <i data-lucide="folder-search" class="w-10 h-10 text-slate-300 mb-2"></i>
+                                <p class="font-semibold text-slate-600 text-sm">Tidak ada data alumni yang cocok</p>
+                                <p class="text-xs mt-1">Coba ubah kata kunci pencarian atau filter tahun kelulusan.</p>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            tbody.innerHTML = filtered.map((item, index) => `
+                <tr class="hover:bg-slate-50/90 transition">
+                    <td class="py-3.5 px-4 font-medium text-slate-500">${index + 1}</td>
+                    <td class="py-3.5 px-4">
+                        <div class="font-bold text-navy-950">${escapeHTML(item.nama)}</div>
+                        <div class="text-[11px] text-slate-400 font-mono">NIK: ${escapeHTML(formatDisplayNik(item.nik))}</div>
+                    </td>
+                    <td class="py-3.5 px-4 text-slate-700 font-medium">${escapeHTML(item.jurusan)}</td>
+                    <td class="py-3.5 px-4">
+                        <span class="px-2.5 py-1 rounded-lg bg-navy-900/5 text-navy-900 font-bold text-xs border border-navy-900/10">${escapeHTML(item.tahunLulus)}</span>
+                    </td>
+                    <td class="py-3.5 px-4">${getStatusBadge(item.status)}</td>
+                    <td class="py-3.5 px-4">
+                        <div class="font-semibold text-slate-800">${escapeHTML(item.instansi)}</div>
+                        <div class="text-[11px] text-slate-500">${escapeHTML(item.jabatan)}</div>
+                    </td>
+                    <td class="py-3.5 px-4">
+                        <div class="text-emerald-700 font-medium flex items-center gap-1">
+                            <i data-lucide="phone" class="w-3 h-3"></i> ${escapeHTML(item.whatsapp)}
+                        </div>
+                        <div class="text-[11px] text-slate-400 truncate max-w-[180px]" title="${escapeHTML(item.alamat)}">${escapeHTML(item.alamat)}</div>
+                    </td>
+                    <td class="py-3.5 px-4">
+                        <div class="flex items-center justify-center gap-1.5">
+                            <button onclick="editAlumni('${item.id}')" title="Edit Data" class="p-2 rounded-lg bg-amber-50 text-amber-600 hover:bg-amber-100 transition cursor-pointer">
+                                <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="promptDeleteAlumni('${item.id}')" title="Hapus Data" class="p-2 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100 transition cursor-pointer">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('filterTahun').value = '';
+            document.getElementById('filterJurusan').value = '';
+            document.getElementById('filterStatus').value = '';
+            renderTable();
+        }
+
+        function updateDashboard() {
+            const total = alumniList.length;
+            const bekerja = alumniList.filter(a => a.status === 'Bekerja').length;
+            const kuliah = alumniList.filter(a => a.status === 'Melanjutkan Kuliah').length;
+            const wirausaha = alumniList.filter(a => a.status === 'Wirausaha').length;
+            const mencari = alumniList.filter(a => a.status === 'Mencari Kerja' || a.status === 'Belum Bekerja').length;
+
+            document.getElementById('sidebarBadgeCount').textContent = total;
+            document.getElementById('statTotal').textContent = total;
+            document.getElementById('statBekerja').textContent = bekerja;
+            document.getElementById('statKuliah').textContent = kuliah;
+            document.getElementById('statWirausaha').textContent = wirausaha;
+            document.getElementById('statMencari').textContent = mencari;
+
+            const pct = (val) => total > 0 ? Math.round((val / total) * 100) + '%' : '0%';
+            document.getElementById('pctBekerja').textContent = pct(bekerja);
+            document.getElementById('pctKuliah').textContent = pct(kuliah);
+            document.getElementById('pctWirausaha').textContent = pct(wirausaha);
+            document.getElementById('pctMencari').textContent = pct(mencari);
+
+            // Tabel 5 alumni terbaru
+            const recentBody = document.getElementById('recentAlumniTable');
+            const recent5 = alumniList.slice(0, 5);
+            recentBody.innerHTML = recent5.map(item => `
+                <tr class="hover:bg-slate-50 transition">
+                    <td class="py-3 px-5">
+                        <div class="font-semibold text-navy-950 text-xs">${escapeHTML(item.nama)}</div>
+                        <div class="text-[11px] text-slate-400 font-mono">NIK: ${escapeHTML(formatDisplayNik(item.nik))}</div>
+                    </td>
+                    <td class="py-3 px-5 text-xs text-slate-600">${escapeHTML(item.jurusan)}</td>
+                    <td class="py-3 px-5 text-xs font-bold text-navy-900">${escapeHTML(item.tahunLulus)}</td>
+                    <td class="py-3 px-5">${getStatusBadge(item.status)}</td>
+                    <td class="py-3 px-5">
+                        <div class="text-xs font-medium text-slate-800">${escapeHTML(item.instansi)}</div>
+                        <div class="text-[11px] text-slate-400">${escapeHTML(item.jabatan)}</div>
+                    </td>
+                </tr>
+            `).join('');
+
+            renderCharts(bekerja, kuliah, wirausaha, mencari);
+        }
+
+        function renderCharts(bekerja, kuliah, wirausaha, mencari) {
+            // 1. Doughnut Chart Status
+            const ctxStatus = document.getElementById('statusChart').getContext('2d');
+            if (statusChartInstance) statusChartInstance.destroy();
+
+            statusChartInstance = new Chart(ctxStatus, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Bekerja', 'Melanjutkan Kuliah', 'Wirausaha', 'Mencari Kerja'],
+                    datasets: [{
+                        data: [bekerja, kuliah, wirausaha, mencari],
+                        backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#f43f5e'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff',
+                        hoverOffset: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '66%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 16,
+                                font: { family: 'Inter', size: 11, weight: '600' }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 2. Bar Chart Jurusan
+            const jurusanLabels = [
+                { full: 'Teknik Komputer dan Jaringan', short: 'TKJ' },
+                { full: 'Rekayasa Perangkat Lunak', short: 'RPL/DKV' },
+                { full: 'Akuntansi dan Keuangan Lembaga', short: 'AKL' },
+                { full: 'Otomatisasi dan Tata Kelola Perkantoran', short: 'OTKP' },
+                { full: 'Bisnis Daring dan Pemasaran', short: 'BDP' },
+                { full: 'Teknik Kendaraan Ringan Otomotif', short: 'TKR' },
+                { full: 'Teknik dan Bisnis Sepeda Motor', short: 'TBSM' }
+            ];
+
+            const jurusanCounts = jurusanLabels.map(j =>
+                alumniList.filter(a => a.jurusan === j.full).length
+            );
+
+            const ctxJurusan = document.getElementById('jurusanChart').getContext('2d');
+            if (jurusanChartInstance) jurusanChartInstance.destroy();
+
+            jurusanChartInstance = new Chart(ctxJurusan, {
+                type: 'bar',
+                data: {
+                    labels: jurusanLabels.map(j => j.short),
+                    datasets: [{
+                        label: 'Jumlah Alumni Terdaftar',
+                        data: jurusanCounts,
+                        backgroundColor: ['#0a1938', '#06b6d4', '#f59e0b', '#1a3b7c', '#0284c7', '#d97706'],
+                        borderRadius: 8,
+                        maxBarThickness: 42
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                title: (items) => {
+                                    const idx = items[0].dataIndex;
+                                    return jurusanLabels[idx].full;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 1, font: { family: 'Inter', size: 11 } },
+                            grid: { color: '#f1f5f9' }
+                        },
+                        x: {
+                            ticks: { font: { family: 'Plus Jakarta Sans', size: 11, weight: '700' } },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // ==========================================
+        // 5. EKSPOR CSV / EXCEL & UTILITIES
+        // ==========================================
+        function exportToCSV() {
+            if (alumniList.length === 0) {
+                showToast('Tidak ada data alumni untuk diekspor.', 'warning');
+                return;
+            }
+
+            const headers = [
+                'ID Alumni',
+                'Nama Lengkap',
+                'NIK (16 Digit)',
+                'Kompetensi Keahlian / Jurusan',
+                'Tahun Lulus',
+                'Status Saat Ini',
+                'Nama Perusahaan / Kampus / Usaha',
+                'Jabatan / Program Studi',
+                'Nomor WhatsApp',
+                'Alamat Domisili'
+            ];
+
+            const rows = alumniList.map(a => [
+                a.id,
+                `"${a.nama.replace(/"/g, '""')}"`,
+                `"'${a.nik}"`,
+                `"${a.jurusan.replace(/"/g, '""')}"`,
+                a.tahunLulus,
+                `"${a.status}"`,
+                `"${a.instansi.replace(/"/g, '""')}"`,
+                `"${a.jabatan.replace(/"/g, '""')}"`,
+                `"'${a.whatsapp}"`,
+                `"${a.alamat.replace(/"/g, '""')}"`
+            ]);
+
+            const csvContent = '\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+
+            const link = document.createElement('a');
+            link.setAttribute('href', url);
+            const dateStr = new Date().toISOString().slice(0, 10);
+            link.setAttribute('download', `Data_Alumni_BKK_SMK_Budi_Murni_2_${dateStr}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            showToast('File CSV Database Alumni BKK berhasil diunduh!', 'success');
+        }
+
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+
+            const styles = {
+                success: 'bg-navy-950 text-white border-emerald-500/50',
+                warning: 'bg-navy-950 text-white border-amber-500/50',
+                info: 'bg-navy-950 text-white border-cyan-500/50'
+            };
+
+            const icons = {
+                success: '<i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>',
+                warning: '<i data-lucide="alert-circle" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>',
+                info: '<i data-lucide="info" class="w-5 h-5 text-cyan-400 flex-shrink-0"></i>'
+            };
+
+            toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3.5 rounded-2xl border shadow-xl text-xs font-medium transition-all duration-300 transform translate-y-2 opacity-0 ${styles[type] || styles.success}`;
+            toast.innerHTML = `${icons[type] || icons.success}<span>${escapeHTML(message)}</span>`;
+
+            container.appendChild(toast);
+            lucide.createIcons();
+
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            });
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        function escapeHTML(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function refreshAllViews() {
+            updateDashboard();
+            renderTable();
+        }
+
+        // Jalankan saat halaman selesai dimuat
+        window.addEventListener('DOMContentLoaded', () => {
+            populateYearDropdowns();
+            loadAuthData();
+            loadAlumniData();
+            refreshAllViews();
+            updateAuthUI();
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
